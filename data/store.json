@@ -1,0 +1,13 @@
+{
+  "name": "Aurevia Market",
+  "tagline": "Curated everyday goods with a little more soul.",
+  "description": "A modern lifestyle store for home, tech, wellness, travel, and wardrobe essentials.",
+  "supportEmail": "hello@aureviamarket.example",
+  "phone": "+1 (555) 018-2940",
+  "address": "428 Market Lane, Seattle, WA 98101",
+  "stats": [
+    { "label": "Happy customers", "value": "18k+" },
+    { "label": "Curated products", "value": "120+" },
+    { "label": "Avg. delivery", "value": "2.4 days" }
+  ]
+}

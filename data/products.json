@@ -1,0 +1,134 @@
+[
+  {
+    "id": "aur-1001",
+    "name": "Luma Ceramic Table Lamp",
+    "category": "Home",
+    "price": 78,
+    "rating": 4.8,
+    "stock": 18,
+    "badge": "Best seller",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
+    "description": "Soft matte ceramic lamp with warm ambient glow for desks, shelves, and bedside corners."
+  },
+  {
+    "id": "aur-1002",
+    "name": "Nord Wireless Headphones",
+    "category": "Tech",
+    "price": 129,
+    "rating": 4.7,
+    "stock": 24,
+    "badge": "New",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+    "description": "Cushioned wireless headphones tuned for deep focus, travel, and clean calls."
+  },
+  {
+    "id": "aur-1003",
+    "name": "Atlas Weekender Duffel",
+    "category": "Travel",
+    "price": 96,
+    "rating": 4.9,
+    "stock": 12,
+    "badge": "Limited",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=80",
+    "description": "Structured canvas duffel with smart pockets and a compact carry-on profile."
+  },
+  {
+    "id": "aur-1004",
+    "name": "Sora Linen Throw",
+    "category": "Home",
+    "price": 54,
+    "rating": 4.6,
+    "stock": 33,
+    "badge": "Cozy pick",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
+    "description": "Breathable linen-cotton throw woven for year-round comfort and quiet texture."
+  },
+  {
+    "id": "aur-1005",
+    "name": "Pulse Smart Bottle",
+    "category": "Wellness",
+    "price": 42,
+    "rating": 4.5,
+    "stock": 29,
+    "badge": "Popular",
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
+    "description": "Double-wall bottle with hydration reminders and a leakproof stainless build."
+  },
+  {
+    "id": "aur-1006",
+    "name": "Mira Ribbed Knit Set",
+    "category": "Fashion",
+    "price": 88,
+    "rating": 4.7,
+    "stock": 16,
+    "badge": "Soft touch",
+    "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    "description": "Relaxed ribbed knit set made for polished weekends and easy layering."
+  },
+  {
+    "id": "aur-1007",
+    "name": "Terra Desk Organizer",
+    "category": "Office",
+    "price": 36,
+    "rating": 4.4,
+    "stock": 41,
+    "badge": "Clean desk",
+    "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+    "description": "Modular desktop organizer with trays for tools, notes, cables, and daily essentials."
+  },
+  {
+    "id": "aur-1008",
+    "name": "Echo Mini Speaker",
+    "category": "Tech",
+    "price": 67,
+    "rating": 4.6,
+    "stock": 20,
+    "badge": "Compact",
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=900&q=80",
+    "description": "Portable speaker with punchy sound, textured grip, and all-day battery life."
+  },
+  {
+    "id": "aur-1009",
+    "name": "Bloom Skincare Duo",
+    "category": "Wellness",
+    "price": 59,
+    "rating": 4.8,
+    "stock": 22,
+    "badge": "Glow kit",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=80",
+    "description": "Gentle cleanser and daily moisturizer pairing for a simple morning routine."
+  },
+  {
+    "id": "aur-1010",
+    "name": "Harbor Sunglasses",
+    "category": "Fashion",
+    "price": 74,
+    "rating": 4.5,
+    "stock": 26,
+    "badge": "UV400",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80",
+    "description": "Lightweight acetate frames with crisp lenses and a timeless everyday silhouette."
+  },
+  {
+    "id": "aur-1011",
+    "name": "Kona Pour-Over Kit",
+    "category": "Kitchen",
+    "price": 64,
+    "rating": 4.9,
+    "stock": 14,
+    "badge": "Morning ritual",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+    "description": "Glass dripper, carafe, filters, and scoop for clean and consistent coffee brewing."
+  },
+  {
+    "id": "aur-1012",
+    "name": "Nomad Packing Cubes",
+    "category": "Travel",
+    "price": 39,
+    "rating": 4.6,
+    "stock": 37,
+    "badge": "Travel smart",
+    "image": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80",
+    "description": "Lightweight packing cubes that keep outfits, accessories, and laundry separated."
+  }
+]
