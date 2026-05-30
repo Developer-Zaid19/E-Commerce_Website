@@ -17,11 +17,15 @@ export default function AddToCartButton({ productId, compact = false }) {
     <button
       type="button"
       onClick={handleAdd}
-      className={`rounded-full bg-neutral-950 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400 ${
-        compact ? "px-4 py-2" : "px-5 py-3"
-      }`}
+      className="rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95"
+      style={{
+        backgroundColor: added ? "var(--brand)" : "var(--foreground)",
+        color: added ? "#fff" : "var(--background)",
+        padding: compact ? "0.4rem 1rem" : "0.6rem 1.25rem",
+        boxShadow: "var(--shadow-sm)",
+      }}
     >
-      {added ? "Added" : "Add to cart"}
+      {added ? "✓ Added" : "Add to cart"}
     </button>
   );
 }

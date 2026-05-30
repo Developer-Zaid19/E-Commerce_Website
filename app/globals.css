@@ -1,23 +1,78 @@
 @import "tailwindcss";
 
+/* ── Light theme (default) ───────────────────────────────────────── */
 :root {
-  --background: #fafaf7;
-  --foreground: #171717;
+  --background:        #fafaf7;
+  --background-card:   #ffffff;
+  --background-subtle: #f4f4f0;
+  --foreground:        #111110;
+  --foreground-muted:  #6b6b63;
+  --foreground-faint:  #a3a39b;
+
+  --border:            #e4e4de;
+  --border-strong:     #c9c9c1;
+
+  --brand:             #059669;   /* emerald-600 */
+  --brand-hover:       #047857;   /* emerald-700 */
+  --brand-faint:       #d1fae5;   /* emerald-100 */
+  --brand-ring:        #6ee7b7;   /* emerald-300 */
+
+  --accent:            #fbbf24;   /* amber-400  */
+  --accent-hover:      #f59e0b;   /* amber-500  */
+
+  --cta-text:          #111110;
+
+  --nav-bg:            rgba(250, 250, 247, 0.92);
+  --nav-border:        #e4e4de;
+
+  --hero-overlay:      rgba(17, 17, 16, 0.55);
+
+  --shadow-sm:  0 1px 3px 0 rgba(0,0,0,.06), 0 1px 2px -1px rgba(0,0,0,.06);
+  --shadow-md:  0 4px 12px 0 rgba(0,0,0,.08), 0 2px 6px -2px rgba(0,0,0,.06);
+  --shadow-xl:  0 20px 48px -8px rgba(0,0,0,.14);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Dark theme ──────────────────────────────────────────────────── */
+html.dark {
+  --background:        #111110;
+  --background-card:   #1c1c1a;
+  --background-subtle: #232320;
+
+  --foreground:        #f0f0ec;
+  --foreground-muted:  #9e9e96;
+  --foreground-faint:  #5a5a54;
+
+  --border:            #2e2e2a;
+  --border-strong:     #424240;
+
+  --brand:             #34d399;   /* emerald-400 */
+  --brand-hover:       #6ee7b7;
+  --brand-faint:       #064e3b;
+  --brand-ring:        #059669;
+
+  --accent:            #fbbf24;
+  --accent-hover:      #f59e0b;
+
+  --cta-text:          #111110;
+
+  --nav-bg:            rgba(17, 17, 16, 0.92);
+  --nav-border:        #2e2e2a;
+
+  --hero-overlay:      rgba(0, 0, 0, 0.65);
+
+  --shadow-sm:  0 1px 3px 0 rgba(0,0,0,.3),  0 1px 2px -1px rgba(0,0,0,.3);
+  --shadow-md:  0 4px 12px 0 rgba(0,0,0,.4), 0 2px 6px -2px rgba(0,0,0,.3);
+  --shadow-xl:  0 20px 48px -8px rgba(0,0,0,.6);
 }
 
+/* ── Base styles ─────────────────────────────────────────────────── */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--background);
+  color:            var(--foreground);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+    "DM Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -25,6 +80,20 @@ html {
 }
 
 ::selection {
-  background: #fbbf24;
-  color: #171717;
+  background: var(--accent);
+  color: #111110;
 }
+
+/* ── Transition helpers ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--background); }
+::-webkit-scrollbar-thumb  { background: var(--border-strong); border-radius: 99px; }
