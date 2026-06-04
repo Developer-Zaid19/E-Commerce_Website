@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
-import { formatPrice } from "@/lib/products";
+import { formatPrice } from "@/lib/utils";
 
 export default function CartView() {
   const { items, totals, updateQuantity, removeItem } = useCart();

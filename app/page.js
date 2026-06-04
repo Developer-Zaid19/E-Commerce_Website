@@ -4,8 +4,10 @@ import ProductCard from "@/components/ProductCard";
 import store from "@/data/store.json";
 import { getFeaturedProducts } from "@/lib/products";
 
-export default function Home() {
-  const featuredProducts = getFeaturedProducts();
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const featuredProducts = await getFeaturedProducts();
 
   return (
     <>

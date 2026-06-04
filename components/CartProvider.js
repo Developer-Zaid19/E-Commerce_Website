@@ -1,12 +1,12 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import products from "@/data/products.json";
 
 const CartContext = createContext(null);
 
 export function CartProvider({ children }) {
   const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -18,6 +18,23 @@ export function CartProvider({ children }) {
       setReady(true);
     });
     return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    async function loadProducts() {
+      try {
+        const response = await fetch("/api/products");
+        if (!response.ok) {
+          throw new Error("Failed to load products");
+        }
+        const productsData = await response.json();
+        setProducts(productsData);
+      } catch (error) {
+        setProducts([]);
+      }
+    }
+
+    loadProducts();
   }, []);
 
   useEffect(() => {
@@ -34,7 +51,7 @@ export function CartProvider({ children }) {
           return product ? { ...product, quantity: item.quantity } : null;
         })
         .filter(Boolean),
-    [items],
+    [items, products],
   );
 
   const totals = useMemo(() => {

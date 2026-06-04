@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
-import { formatPrice } from "@/lib/products";
+import { formatPrice } from "../lib/products";
 
 export default function ProductCard({ product }) {
   return (

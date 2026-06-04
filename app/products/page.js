@@ -1,13 +1,15 @@
-import ProductCard from "@/components/ProductCard";
+import ProductSearch from "@/components/ProductSearch";
 import { getCategories, getProducts } from "@/lib/products";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Products | Aurevia Market",
 };
 
-export default function ProductsPage() {
-  const products   = getProducts();
-  const categories = getCategories();
+export default async function ProductsPage() {
+  const products = await getProducts();
+  const categories = getCategories(products);
 
   return (
     <section
@@ -47,11 +49,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      <ProductSearch products={products} />
     </section>
   );
 }
