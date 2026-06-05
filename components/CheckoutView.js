@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/components/CartProvider";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice } from "../lib/products";
 
 export default function CheckoutView() {
   const { items, totals, clearCart } = useCart();

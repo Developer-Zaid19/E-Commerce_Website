@@ -26,7 +26,7 @@ export default function ProductCard({ product }) {
         style={{ backgroundColor: "var(--background-subtle)" }}
       >
         <Image
-          src={product.image}
+          src={`/ProductsMedia/img/${product.image || "cartimg.avif"}`}
           alt={product.name}
           fill
           sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
