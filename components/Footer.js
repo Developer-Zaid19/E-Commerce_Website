@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import store from "@/data/store.json";
+import Image from "next/image";
+
 
 export default function Footer() {
   return (
@@ -17,12 +19,12 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="mb-4 flex items-center gap-3">
-            <span
-              className="grid h-10 w-10 place-items-center rounded-xl text-lg font-black text-white"
-              style={{ backgroundColor: "var(--brand)" }}
-            >
-              A
-            </span>
+            <Image
+              alt="logo"
+              src={"/logo.png"}
+              width={40}
+              height={40}
+            />
             <span className="text-xl font-black" style={{ color: "var(--foreground)" }}>
               {store.name}
             </span>
@@ -42,8 +44,8 @@ export default function Footer() {
           </h3>
           <div className="grid gap-3 text-sm" style={{ color: "var(--foreground-muted)" }}>
             {[
-              ["/products",    "Products"],
-              ["/cart",        "Cart"],
+              ["/products", "Products"],
+              ["/cart", "Cart"],
               ["/place-order", "Place order"],
             ].map(([href, label]) => (
               <Link

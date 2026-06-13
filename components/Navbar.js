@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/components/CartProvider";
 import { useTheme } from "@/components/ThemeProvider";
+import Image from "next/image";
 import store from "@/data/store.json";
 
 const navItems = [
@@ -69,12 +70,12 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
           onClick={() => setOpen(false)}
         >
-          <span
-            className="grid h-9 w-9 place-items-center rounded-xl text-base font-black text-white transition-transform group-hover:scale-105"
-            style={{ background: "var(--brand)" }}
-          >
-            A
-          </span>
+          <Image
+          src={"/logo.png"}
+          alt="logo"
+          width={40}
+          height={40}
+          />
           <span className="text-lg font-black" style={{ color: "var(--foreground)" }}>
             {store.name}
           </span>

@@ -59,7 +59,7 @@ export default function CartView() {
               }}
             >
               <Image
-                src={item.image}
+                src={`/ProductsMedia/img/${item.image}`}
                 alt={item.name}
                 width={140}
                 height={140}

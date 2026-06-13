@@ -36,7 +36,7 @@ export default function CheckoutView() {
         </p>
         <Link
           href="/products"
-          className="mt-8 inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105"
+          className="mt-8 inline-flex rounded-full px-6 py-3 text-sm font-bold text-(--background) transition-all hover:scale-105"
           style={{ backgroundColor: "var(--foreground)" }}
         >
           Continue shopping
@@ -134,7 +134,7 @@ export default function CheckoutView() {
             {items.map((item) => (
               <div key={item.id} className="flex gap-3">
                 <Image
-                  src={item.image}
+                  src={`/ProductsMedia/img/${item.image}`}
                   alt={item.name}
                   width={64}
                   height={64}
