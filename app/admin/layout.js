@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 
 export default function AdminLayout({ children }) {
@@ -20,8 +22,10 @@ export default function AdminLayout({ children }) {
 
       {/* Main Area */}
       <div className="flex-1">
-        <header className="border-b p-4">
-          Admin Dashboard
+        <header className="border-b p-4 flex gap-2 justify-between">
+          <div className=''>Admin Dashboard</div>
+          <button className="text-white bg-(--brand) px-2 py-1 rounded-md font-semibold" onClick={() => signOut()}>Signout</button>
+          
         </header>
 
         <main className="p-6">

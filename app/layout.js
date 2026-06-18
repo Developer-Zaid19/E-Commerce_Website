@@ -2,6 +2,7 @@ import { CartProvider } from "@/components/CartProvider";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import AuthProvider from "@/components/SessionProvider";
 import "./globals.css";
 
 export const metadata = {
@@ -14,6 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full antialiased">
       <body style={{ minHeight: "100vh", backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+        <AuthProvider>
+
         <ThemeProvider>
           <CartProvider>
             <div className="flex min-h-screen flex-col">
@@ -23,6 +26,7 @@ export default function RootLayout({ children }) {
             </div>
           </CartProvider>
         </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

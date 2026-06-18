@@ -1,49 +1,54 @@
 "use client"
 import products from "@/data/products.json";
+import { getSession, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
+
 
 // ── Icon components ───────────────────────────────────────────────
 function BoxIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-      <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" />
     </svg>
   );
 }
 function TagIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-      <line x1="7" y1="7" x2="7.01" y2="7"/>
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+      <line x1="7" y1="7" x2="7.01" y2="7" />
     </svg>
   );
 }
 function LayersIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-      <polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+      <polygon points="12 2 2 7 12 12 22 7 12 2" />
+      <polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" />
     </svg>
   );
 }
 function StarIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </svg>
   );
 }
 function SearchIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
   );
 }
 function TrendUpIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
     </svg>
   );
 }
@@ -63,14 +68,14 @@ function StatCard({ icon, label, value, accent }) {
       transition: "box-shadow 0.2s, transform 0.2s",
       cursor: "default",
     }}
-    onMouseEnter={e => {
-      e.currentTarget.style.boxShadow = "var(--shadow-md)";
-      e.currentTarget.style.transform = "translateY(-2px)";
-    }}
-    onMouseLeave={e => {
-      e.currentTarget.style.boxShadow = "var(--shadow-sm)";
-      e.currentTarget.style.transform = "translateY(0)";
-    }}
+      onMouseEnter={e => {
+        e.currentTarget.style.boxShadow = "var(--shadow-md)";
+        e.currentTarget.style.transform = "translateY(-2px)";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.boxShadow = "var(--shadow-sm)";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
     >
       {/* Icon badge */}
       <div style={{
@@ -100,7 +105,10 @@ function StatCard({ icon, label, value, accent }) {
 }
 
 // ── Main Page ─────────────────────────────────────────────────────
-export default function DashboardPage() {
+export default
+ function DashboardPage() {
+
+  const router = useRouter();
   const totalProducts = products.length;
   const totalCategories = new Set(products.map((p) => p.category)).size;
   const totalStock = products.reduce((sum, p) => sum + p.stock, 0);
@@ -109,6 +117,19 @@ export default function DashboardPage() {
       ? (products.reduce((sum, p) => sum + p.rating, 0) / products.length).toFixed(1)
       : 0;
   const recentProducts = [...products].reverse().slice(0, 5);
+
+  useEffect(() => {
+    const fetchSession = async () => {
+      const session = await getSession();
+      if (!session) {
+        router.push("/login");
+        return;
+      }
+
+    };
+
+    fetchSession();
+  }, [router]);
 
   return (
     <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "32px 24px", display: "flex", flexDirection: "column", gap: "32px" }}>
@@ -144,10 +165,10 @@ export default function DashboardPage() {
         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
         gap: "16px",
       }}>
-        <StatCard icon={<BoxIcon />}    label="Total Products"  value={totalProducts}  accent />
-        <StatCard icon={<TagIcon />}    label="Categories"      value={totalCategories} />
-        <StatCard icon={<LayersIcon />} label="Total Stock"     value={totalStock.toLocaleString()} />
-        <StatCard icon={<StarIcon />}   label="Avg. Rating"     value={`${averageRating} ★`} />
+        <StatCard icon={<BoxIcon />} label="Total Products" value={totalProducts} accent />
+        <StatCard icon={<TagIcon />} label="Categories" value={totalCategories} />
+        <StatCard icon={<LayersIcon />} label="Total Stock" value={totalStock.toLocaleString()} />
+        <StatCard icon={<StarIcon />} label="Avg. Rating" value={`${averageRating} ★`} />
       </div>
 
       {/* ── Bottom Row ── */}
