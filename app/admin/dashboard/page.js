@@ -288,7 +288,6 @@ export default
           }}>
             {[
               { label: "Indexed", value: totalProducts },
-              { label: "Books", value: "7 Major" },
             ].map(({ label, value }) => (
               <div key={label} style={{
                 background: "var(--background-subtle)", borderRadius: "10px", padding: "12px",
